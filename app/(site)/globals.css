@@ -5,6 +5,8 @@
   --accent: #a18a68;
   --dark-grey: #707070;
   --white: #FFFFFF;
+  --font-text: var(--font-dm-sans);
+  --font-title: var(--font-allerta);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,7 +25,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

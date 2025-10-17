@@ -1,0 +1,101 @@
+/* Фон-затемнение */
+.backdrop {
+    position: fixed;
+    inset: 0; /* Аналог top: 0; right: 0; bottom: 0; left: 0; */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+/* Контейнер меню */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%; /* Сделаем чуть поуже для лучшего вида */
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Верхняя часть меню (лого + кнопка закрытия) */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.menuLogo {
+    width: 100px;
+    height: auto;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px; /* Увеличим область клика */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Основная навигация */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+/* Блок с иконками (аккаунт, избранное) */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.actionLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.actionLink:hover {
+    color: #000;
+}
+
+.actionLink svg {
+    width: 22px;
+    height: 22px;
+}
