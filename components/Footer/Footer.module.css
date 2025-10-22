@@ -1,0 +1,145 @@
+.footer {
+    width: 100%;
+    background: var(--white);
+    padding: 90px 96px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    max-width: 1440px;
+    border-top: 1px solid  #d8d8d8;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 20px; /* Отступ снизу до границы */
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.links {
+    display: flex;
+    gap: 29px;
+}
+.linkCopy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.links a:hover {
+    color: #000;
+}
+.info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 169%;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+/* Средняя часть */
+.copy {
+    font-size: 14px;
+    color: var(--black);
+    /*align-self: center;*/
+    /*padding-top: 60px;*/
+}
+
+.copy span {
+    font-weight: 600;
+    color: var(--black);
+}
+
+/* Правая часть */
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.rowInput {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid  #000;
+    padding-bottom: 13px; /* Отступ снизу до границы */
+}
+
+.emailInput {
+    width: 289px;
+}
+.row {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.row:hover {
+    transform: translateX(2px);
+}
+.socials {
+    display: flex;
+    gap: 16px;
+    padding-top: 33px;
+}
+
+.socials a svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+    transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.socials a:hover svg {
+    transform: scale(1.1);
+    fill: #000;
+}
+
+/* 📱 Адаптив */
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 20px;
+    }
+    .container {
+        flex-direction: column; /* 👈 сначала инпут и соцсети, потом ссылки */
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        border-top: none;
+    }
+
+    .right {
+        order: 1;
+        align-items: center;
+        width: 100%;
+    }
+
+    .rowInput {
+        justify-content: center;
+        border-bottom: 1px solid #000;
+        width: 90%;
+    }
+
+    .emailInput {
+        width: 289px;
+        text-align: center;
+    }
+
+    .links {
+        order: 2;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .linkCopy {
+        align-items: center;
+    }
+    .copy {
+        margin-top: 12px;
+    }
+
+    .socials {
+        justify-content: center;
+        padding-top: 20px;
+    }
+}

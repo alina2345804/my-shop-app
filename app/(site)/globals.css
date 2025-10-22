@@ -5,8 +5,9 @@
   --accent: #a18a68;
   --dark-grey: #707070;
   --white: #FFFFFF;
-  --font-text: var(--font-dm-sans);
-  --font-title: var(--font-allerta);
+  --red: #FC836D;
+  --font-text: dmSans;
+  --font-title: allertaStencil;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +21,19 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Контент "выталкивает" футер вниз */
+.main-content {
+  flex: 1;
 }
 
 body {

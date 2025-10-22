@@ -16,7 +16,7 @@
     /*gap: 40px;*/
 
     padding-bottom: 20px; /* Отступ снизу до границы */
-    border-bottom: 1px solid #EAEAEA; /* НАША ГРАНИЦА! */
+    border-bottom: 1px solid  #d8d8d8; /* НАША ГРАНИЦА! */
 }
 
 .nav {
@@ -202,4 +202,8 @@
     .logo {
         width: 90px;
     }
+    .searchWrapper {
+        position: relative;
+    }
+
 }

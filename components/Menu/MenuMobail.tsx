@@ -12,6 +12,9 @@ import CloseIcon from '../../public/close.svg';
 import UserIcon from '../../public/user.svg';
 import LikeIcon from '../../public/like.svg';
 import CartIcon from '../../public/cart.svg';
+import {Input} from "@/components";
+import cn from "classnames";
+import SearchIcon from "@/public/search.svg";
 
 interface MenuMobailProps {
     isOpen: boolean;

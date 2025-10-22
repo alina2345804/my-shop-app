@@ -11,7 +11,7 @@ import SearchIcon from '../../public/search.svg';
 import MenuIcon from '../../public/menu.svg';
 import Image from 'next/image';
 import Shoppe from './shoppe.png';
-import { MenuMobail } from "@/components";
+import { MenuMobail, Input } from "@/components";
 import Link from "next/link";
 
 export const Header = ({ navLinks = [
@@ -55,9 +55,10 @@ export const Header = ({ navLinks = [
 
                         <div className={styles.actions}>
                             <div className={styles.searchWrapper}>
-                                <input
+                                <Input
                                     type="text"
                                     placeholder="Поиск"
+                                    variant="default"
                                     className={cn(styles.search, { [styles.searchVisible]: isSearchVisible })}
                                 />
                                 <a href="#" onClick={toggleSearch}>

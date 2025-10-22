@@ -2,6 +2,7 @@ import "./globals.css";
 import { Header } from "@/components/Header/Header";
 import './globals.css';
 import { DM_Sans, Allerta_Stencil } from 'next/font/google';
+import {Footer} from "@/components/Footer/Footer";
 
 
 // 1️⃣ DM Sans — основной шрифт для текста
@@ -26,15 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${dmSans.variable} ${allertaStencil.variable}`}>
-      <body>
-      <div>
-        <Header/>
-      </div>
-      <div>
-          {children}
-      </div>
+      <html lang="ru" className={`${dmSans.variable} ${allertaStencil.variable}`}>
+      <body className="layout">
+      <Header />
+      <main className="main-content">
+          {children}</main>
+      <Footer />
       </body>
-    </html>
+      </html>
   );
 }
