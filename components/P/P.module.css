@@ -1,0 +1,21 @@
+.p {
+    margin: 0;
+
+    font-family: var(--font-text);
+
+    font-weight: 400;
+}
+.s {
+font-size: 12px;
+line-height: 169%;
+
+}
+.m {
+font-size: 16px;
+line-height: 169%;
+
+}
+.l {
+font-size: 18px;
+line-height: 161%;
+}

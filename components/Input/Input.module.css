@@ -1,0 +1,47 @@
+.input {
+    padding: 7px 15px;
+    color: var(--black);
+    border: none;
+    outline: none;
+    background: #efefef;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    max-width: 500px;
+    transition: border 0.2s ease;
+}
+.borderless {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+}
+/*.input ::placeholder {*/
+/*    color: var(--dark-grey);*/
+/*}*/
+.error {
+    border: 1px solid var(--red);
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+/*.label {*/
+/*    font-size: 14px;*/
+/*    color: #555;*/
+/*}*/
+.errorMessage {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: var(--red);
+}
+/*.icon {*/
+/*    position: absolute;*/
+/*    right: 12px;*/
+/*    width: 18px;*/
+/*    height: 18px;*/
+/*    pointer-events: none;*/
+/*}*/

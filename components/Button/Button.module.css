@@ -1,0 +1,23 @@
+.button {
+    max-width: 500px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.black {
+    background-color: var(--black);
+}
+
+.black:hover{
+    background-color: var(--white);
+}
+
+.white {
+    background-color: var(--white);
+}
+
+.white:hover{
+    background-color: var(--black);
+}
+
+
