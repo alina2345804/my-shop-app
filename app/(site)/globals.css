@@ -4,8 +4,10 @@
   --black: #000;
   --accent: #a18a68;
   --dark-grey: #707070;
+  --grey: #d8d8d8;
+  --light: #a18a68;
   --white: #FFFFFF;
-  --red: #FC836D;
+  --red: #d82700;
   --font-text: dmSans;
   --font-title: allertaStencil;
 }

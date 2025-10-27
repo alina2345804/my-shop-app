@@ -6,3 +6,7 @@ export * from './Htag/Htag';
 export * from './P/P';
 export * from './Button/Button';
 export * from './Notification/Notification';
+export * from './Pagination/Pagination';
+export * from './Range/Range';
+export * from './ProductCard/ProductCard';
+export * from './ProductsList/ProductsList';

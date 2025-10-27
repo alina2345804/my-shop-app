@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         });
         return config;
     },
+    images: {
+        // Убедитесь, что здесь правильный домен из вашего URL
+        domains: ['cdn-bucket.hb.ru-msk.vkcs.cloud'],
+    },
 };
 
-export default nextConfig;
+export default nextConfig; // Экспортируем ОДИН объект
