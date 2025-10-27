@@ -43,40 +43,40 @@ export const Header = ({ navLinks = [
             <div className={styles.container}>
                 <Image src={Shoppe} alt="Логотип магазина" className={styles.logo} priority />
 
-                    <>
-                        <nav className={styles.nav}>
-                            {navLinks.map(link => (
-                                <Link key={link.href} href={link.href}>{link.label}</Link>
-                            ))}
-                        </nav>
+                <>
+                    <nav className={styles.nav}>
+                        {navLinks.map(link => (
+                            <Link key={link.href} href={link.href}>{link.label}</Link>
+                        ))}
+                    </nav>
 
-                        {/*Линия по горизонтали*/}
-                        <div className={styles.divider}></div>
+                    {/*Линия по горизонтали*/}
+                    <div className={styles.divider}></div>
 
-                        <div className={styles.actions}>
-                            <div className={styles.searchWrapper}>
-                                <Input
-                                    type="text"
-                                    placeholder="Поиск"
-                                    variant="default"
-                                    className={cn(styles.search, { [styles.searchVisible]: isSearchVisible })}
-                                />
-                                <a href="#" onClick={toggleSearch}>
-                                    <SearchIcon />
-                                </a>
-                            </div>
-                            <Link href="/cart"><CartIcon /></Link>
-                            <Link href="/wishlist"><LikeIcon /></Link>
-                            <Link href="/profile"><UserIcon /></Link>
+                    <div className={styles.actions}>
+                        <div className={styles.searchWrapper}>
+                            <Input
+                                type="text"
+                                placeholder="Поиск"
+                                variant="default"
+                                className={cn(styles.search, { [styles.searchVisible]: isSearchVisible })}
+                            />
+                            <a href="#" onClick={toggleSearch}>
+                                <SearchIcon />
+                            </a>
                         </div>
-                    </>
-
-                    <div className={styles.mobileActions}>
-                        <Link href="/cart" className={styles.iconBtn}><CartIcon /></Link>
-                        <button onClick={() => setMenuOpen(true)} className={styles.iconBtn}>
-                            <MenuIcon />
-                        </button>
+                        <Link href="/cart"><CartIcon /></Link>
+                        <Link href="/wishlist"><LikeIcon /></Link>
+                        <Link href="/profile"><UserIcon /></Link>
                     </div>
+                </>
+
+                <div className={styles.mobileActions}>
+                    <Link href="/cart" className={styles.iconBtn}><CartIcon /></Link>
+                    <button onClick={() => setMenuOpen(true)} className={styles.iconBtn}>
+                        <MenuIcon />
+                    </button>
+                </div>
             </div>
             <MenuMobail isOpen={menuOpen} onClose={closeMenu} />
         </header>
