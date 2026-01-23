@@ -1,11 +1,10 @@
-import {DetailedHTMLProps, HTMLAttributes } from "react";
-import { StaticImageData } from 'next/image';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { Product } from '../../interfaces/product.interface';
 
-export interface ProductCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>{
-    name: string;
-    price: number;
-    discount?: number;
-    description?: string;
-    images: string[];
-    onQuickViewClick?: () => void;
+export interface ProductCardProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  product: Product;
+  onQuickViewClick?: () => void;
+  variant?: 'home' | 'catalog';
+  className?: string;
 }

@@ -1,0 +1,15 @@
+.productPrice {
+    justify-content: flex-start;
+    padding-top: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: var(--light);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+}
+.priceOld {
+    text-decoration: line-through;
+    color: var(--red);
+}

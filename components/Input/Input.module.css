@@ -1,47 +1,71 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .input {
-    padding: 7px 15px;
+    padding: 7px 15px 7px 0;
     color: var(--black);
     border: none;
-    outline: none;
-    background: #efefef;
     font-weight: 400;
     font-size: 14px;
     line-height: 157%;
-    max-width: 500px;
+    width: 100%;
     transition: border 0.2s ease;
 }
+.input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
 .borderless {
     border: none;
-    background: transparent;
-    outline: none;
-    padding: 0;
+    background-color: transparent;
 }
-/*.input ::placeholder {*/
-/*    color: var(--dark-grey);*/
-/*}*/
+.icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    fill: #888;
+    cursor: default;
+}
+.clickable {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.clickable:hover {
+    opacity: 0.7;
+}
+.left {
+    left: 12px;
+}
+
+.right {
+    right: 12px;
+}
+
+.hasIconLeft .input {
+    padding-left: 36px; /* место под иконку */
+}
+
+.hasIconRight .input {
+    padding-right: 36px;
+}
+
 .error {
     border: 1px solid var(--red);
 }
-.inputWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    width: 100%;
-}
-/*.label {*/
-/*    font-size: 14px;*/
-/*    color: #555;*/
-/*}*/
+
 .errorMessage {
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    color: var(--red);
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 4px;
 }
-/*.icon {*/
-/*    position: absolute;*/
-/*    right: 12px;*/
-/*    width: 18px;*/
-/*    height: 18px;*/
-/*    pointer-events: none;*/
-/*}*/

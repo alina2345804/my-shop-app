@@ -1,0 +1,14 @@
+.about {
+    text-align: center;
+    width: 670px;
+    margin: 0 auto;
+}
+.aboutTitle {
+    padding: 112px 0 24px 0;
+}
+.aboutText {
+    text-align: left;
+    width: 100%;
+    max-width: 670px;
+    padding-top: 46px;
+}

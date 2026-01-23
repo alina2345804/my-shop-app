@@ -1,10 +1,6 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
-    width: 100%; /* можно задать 262px, если нужно фиксировано */
-    max-width: 262px;
-    padding: 20px 20px;
 }
 
 .track {
@@ -20,7 +16,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    background: var(--black); /* цвет активной части */
+    background: var(--black);
     border-radius: 2px;
     transition: left 0.1s ease, width 0.1s ease;
 }

@@ -1,0 +1,8 @@
+.favoriteTag {
+    padding: 39px 0 39px 0;
+}
+.favoritePage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}

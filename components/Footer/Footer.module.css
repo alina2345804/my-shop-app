@@ -9,23 +9,23 @@
 }
 .container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1248px;
     border-top: 1px solid  #d8d8d8;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: space-between;
     padding-top: 20px; /* Отступ снизу до границы */
-    flex-wrap: wrap;
     gap: 40px;
 }
 .links {
     display: flex;
-    gap: 29px;
+    justify-content: space-between;
+    /*gap: 29px;*/
 }
 .linkCopy {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    gap: 29px;
+    padding-top: 15px;
 }
 
 .links a:hover {
@@ -56,8 +56,7 @@
 /* Правая часть */
 .right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+   justify-content: space-between;
     gap: 16px;
 }
 .rowInput {
@@ -66,9 +65,21 @@
     border-bottom: 1px solid  #000;
     padding-bottom: 13px; /* Отступ снизу до границы */
 }
-
+.topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.bottomRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .emailInput {
-    width: 289px;
+   min-width: 396px;
 }
 .row {
     cursor: pointer;
@@ -80,9 +91,7 @@
 .socials {
     display: flex;
     gap: 16px;
-    padding-top: 33px;
 }
-
 .socials a svg {
     width: 20px;
     height: 20px;
@@ -95,51 +104,115 @@
     fill: #000;
 }
 
-/* 📱 Адаптив */
-@media (max-width: 768px) {
+/*  Адаптив */
+@media (max-width: 480px) {
     .footer {
         padding: 60px 20px;
     }
     .container {
-        flex-direction: column; /* 👈 сначала инпут и соцсети, потом ссылки */
-        align-items: center;
+        flex-direction: column; /*
+        align-items: flex-start;
         text-align: center;
-        gap: 40px;
+        gap: 36px;
         border-top: none;
     }
-
-    .right {
+    .linkCopy {
         order: 1;
-        align-items: center;
-        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: 400;
+        font-size: 12px;
+        padding: 0;
+        gap: 8px;
     }
-
-    .rowInput {
-        justify-content: center;
-        border-bottom: 1px solid #000;
-        width: 90%;
-    }
-
-    .emailInput {
-        width: 289px;
-        text-align: center;
-    }
-
     .links {
         order: 2;
         flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        align-items: flex-start;
+        /*gap: 0;*/
     }
-    .linkCopy {
-        align-items: center;
+    .info {
+        font-size: 14px;
     }
-    .copy {
-        margin-top: 12px;
-    }
-
     .socials {
+        order: 3;
         justify-content: center;
         padding-top: 20px;
+    }
+    .right {
+        order: 4;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .rowInput {
+        justify-content: center;
+        border-bottom: 1px solid #000;
+        width: 100%;
+        margin-bottom: 21px;
+    }
+
+    .emailInput {
+        width: 100%;
+        text-align: center;
+    }
+
+    .copy {
+        /*margin-top: 25px;*/
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 20px;
+    }
+    .container {
+        flex-direction: column; /*
+        align-items: flex-start;
+        text-align: center;
+        gap: 36px;
+        border-top: none;
+    }
+    .linkCopy {
+        order: 1;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .links {
+        order: 2;
+        flex-direction: column;
+        align-items: flex-start;
+        /*gap: 0;*/
+    }
+    .socials {
+        order: 3;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .right {
+        order: 4;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+}
+@media (max-width: 1440px) {
+    .footer {
+        padding: 20px 20px;
+    }
+    .info {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 169%;
+        color: var(--dark-grey);
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .emailInput {
+        font-size: 13px;
+    }
+    .rowInput {
+        padding-bottom: 5px;
     }
 }

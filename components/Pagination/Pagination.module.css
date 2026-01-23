@@ -1,9 +1,10 @@
 .pagination {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 8px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .pageButton {
