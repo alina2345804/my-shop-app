@@ -19,3 +19,13 @@
     margin: 0;
 }
 
+@media (max-width: 765px) {
+    .h1 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 169%;
+    }
+    .h3 {
+        font-size: 14px;
+    }
+}

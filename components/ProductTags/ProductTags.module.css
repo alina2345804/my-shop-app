@@ -1,0 +1,25 @@
+.tag {
+    position: absolute;
+    top: 12px;
+    left: 12px; /* Или right: 12px, если хотите в правом углу */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.discount, .soldOut {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+.discount {
+    background-color: var(--light);
+    width: 42px;
+    height: 22px;
+}
+.soldOut {
+    background-color: #7f8c8d; /* Серый для "Продано" */
+}
+

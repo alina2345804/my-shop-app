@@ -1,5 +1,5 @@
-'use client'
-import { useState, useEffect } from "react";
+'use client';
+import { useState } from 'react';
 import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
 import { JSX } from 'react';
@@ -11,74 +11,93 @@ import SearchIcon from '../../public/search.svg';
 import MenuIcon from '../../public/menu.svg';
 import Image from 'next/image';
 import Shoppe from './shoppe.png';
-import { MenuMobail, Input } from "@/components";
-import Link from "next/link";
+import { MenuMobail, Input } from '@/components';
+import Link from 'next/link';
 
-export const Header = ({ navLinks = [
+export const Header = ({
+  navLinks = [
     { label: 'Магазин', href: '/catalog' },
-    { label: 'О нас', href: '/about' },], showSearch = true,showIcons = true, className, ...props }: HeaderProps): JSX.Element => {
+    { label: 'О нас', href: '/about' },
+  ],
+  className,
+  ...props
+}: HeaderProps): JSX.Element => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false); // 👈 одно понятное состояние
 
-// Создаем состояние для видимости поиска, по умолчанию он скрыт (false)
-//     const [isMobile, setIsMobile] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [isSearchVisible, setSearchVisible] = useState(false);
+  const openMenu = () => setMenuOpen(true);
+  const closeMenu = () => setMenuOpen(false);
 
-    const openMenu = () => setMenuOpen(true);
-    const closeMenu = () => setMenuOpen(false);
+  return (
+    <header className={cn(styles.header, className)} {...props}>
+      <div className={styles.container}>
+        <Link href="/" aria-label="На главную">
+          <Image
+            src={Shoppe}
+            alt="Логотип магазина"
+            className={styles.logo}
+            priority
+          />
+        </Link>
 
-    // useEffect(() => {
-    //     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    //     handleResize();
-    //     window.addEventListener('resize', handleResize);
-    //     return () => window.removeEventListener('resize', handleResize);
-    // }, []);
+        <nav className={styles.nav}>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-    const toggleSearch = (e: React.MouseEvent) => {
-        e.preventDefault(); // Предотвращаем переход по ссылке '#'
-        setSearchVisible(prev => !prev); // Инвертируем состояние (true -> false, false -> true)
-    };
+        <div className={styles.divider}></div>
 
-    return (
-        <header className={cn(styles.header, className)} {...props}>
-            <div className={styles.container}>
-                <Image src={Shoppe} alt="Логотип магазина" className={styles.logo} priority />
+        {/* --- Desktop Actions --- */}
+        <div className={styles.actions}>
+          <div className={styles.searchWrapper}>
+            {!searchOpen && (
+              <SearchIcon
+                onClick={() => setSearchOpen(true)}
+                style={{ cursor: 'pointer', width: 20, height: 20 }}
+              />
+            )}
 
-                    <>
-                        <nav className={styles.nav}>
-                            {navLinks.map(link => (
-                                <Link key={link.href} href={link.href}>{link.label}</Link>
-                            ))}
-                        </nav>
+            {searchOpen && (
+              <Input
+                type="text"
+                placeholder="Поиск..."
+                icon="search"
+                iconPosition="left"
+                onIconClick={() => setSearchOpen(false)}
+                className={cn(
+                  styles.searchInput,
+                  'transition-all duration-300'
+                )}
+              />
+            )}
+          </div>
 
-                        {/*Линия по горизонтали*/}
-                        <div className={styles.divider}></div>
+          <Link href="/cart">
+            <CartIcon />
+          </Link>
+          <Link href="/favorite">
+            <LikeIcon />
+          </Link>
+          <Link href="/profile">
+            <UserIcon />
+          </Link>
+        </div>
 
-                        <div className={styles.actions}>
-                            <div className={styles.searchWrapper}>
-                                <Input
-                                    type="text"
-                                    placeholder="Поиск"
-                                    variant="default"
-                                    className={cn(styles.search, { [styles.searchVisible]: isSearchVisible })}
-                                />
-                                <a href="#" onClick={toggleSearch}>
-                                    <SearchIcon />
-                                </a>
-                            </div>
-                            <Link href="/cart"><CartIcon /></Link>
-                            <Link href="/wishlist"><LikeIcon /></Link>
-                            <Link href="/profile"><UserIcon /></Link>
-                        </div>
-                    </>
+        {/* --- Mobile Actions --- */}
+        <div className={styles.mobileActions}>
+          <Link href="/cart" className={styles.iconBtn}>
+            <CartIcon />
+          </Link>
+          <button onClick={openMenu} className={styles.iconBtn}>
+            <MenuIcon />
+          </button>
+        </div>
+      </div>
 
-                    <div className={styles.mobileActions}>
-                        <Link href="/cart" className={styles.iconBtn}><CartIcon /></Link>
-                        <button onClick={() => setMenuOpen(true)} className={styles.iconBtn}>
-                            <MenuIcon />
-                        </button>
-                    </div>
-            </div>
-            <MenuMobail isOpen={menuOpen} onClose={closeMenu} />
-        </header>
-    );
+      <MenuMobail isOpen={menuOpen} onClose={closeMenu} />
+    </header>
+  );
 };
