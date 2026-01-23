@@ -15,8 +15,9 @@
 .h3 {
     font-weight: 400;
     font-size: 20px;
-    line-height: 130px;
+    line-height: 130%;
     margin: 0;
+    font-family: var(--font-text);
 }
 
 @media (max-width: 765px) {
