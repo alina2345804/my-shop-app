@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import { getProducts } from '@/api/products';
 import { HeroSlider, Htag, ProductCard } from '@/components';
@@ -11,7 +10,6 @@ export default function HomePage() {
 
   useEffect(() => {
     async function fetchData() {
-      // теперь getProducts уже возвращает нормализованные данные
       const data = await getProducts();
       setProducts(data);
     }
@@ -21,7 +19,22 @@ export default function HomePage() {
 
   return (
     <div className={styles.mainPage}>
-      <HeroSlider />
+      <HeroSlider
+        slides={[
+          {
+            image: '/galleryOne.jpg',
+            title: 'Lira Earrings',
+            price: '$ 20,00',
+            link: '/product/1',
+          },
+          {
+            image: '/galleryTwo.jpg',
+            title: 'Lira Earrings',
+            price: '$ 20,00',
+            link: '/product/2',
+          },
+        ]}
+      />
 
       <div className={styles.titles}>
         <Htag tag="h1">Последние поступления</Htag>

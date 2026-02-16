@@ -1,0 +1,50 @@
+.ratingWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.star {
+    display: inline-flex;
+    margin-right: 6px;
+}
+
+.star svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+    stroke: var(--black);
+    stroke-width: 1.5;
+    transition: fill 0.2s ease, stroke 0.1s ease;
+}
+
+.filled svg {
+    fill: var(--black);
+    stroke: var(--black);
+}
+
+.editable {
+    cursor: pointer;
+}
+
+.editable:hover svg {
+    transform: scale(1.15);
+}
+
+.editable svg:focus {
+    outline: none;
+    transform: scale(1.15);
+}
+
+.error svg {
+    stroke: var(--red);
+}
+
+.errorMessage {
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    font-size: 12px;
+    color: var(--red);
+    white-space: nowrap;
+}

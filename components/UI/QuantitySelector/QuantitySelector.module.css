@@ -1,0 +1,23 @@
+.quantity {
+    display: inline-flex;
+    align-items: center;
+    background: var(--lite-white);
+    border-radius: 4px;
+}
+.quantity button {
+    width: 32px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--dark-grey);
+    cursor: pointer;
+}
+
+.quantity span {
+    width: 34px;
+    text-align: center;
+    color: var(--dark-grey);
+}

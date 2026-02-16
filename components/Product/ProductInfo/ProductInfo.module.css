@@ -1,0 +1,28 @@
+.productHeader {
+    padding-bottom: 61px;
+}
+
+.productMeta {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.productDescription {
+    padding: 19px 0 75px 0;
+}
+
+.productCount {
+    display: flex;
+    gap: 23px;
+}
+
+.productButton {
+    width: 358px;
+    height: 53px;
+    border-radius: 4px;
+}
+
+.actProd {
+    margin-top: 80px;
+}

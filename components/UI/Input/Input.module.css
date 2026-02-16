@@ -1,0 +1,76 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding: 0;
+    color: var(--black);
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    width: 100%;
+    transition: border 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.borderless {
+    border: none;
+    background-color: transparent;
+}
+
+.icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    fill: var(--foreground);
+    cursor: default;
+}
+
+.clickable {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.clickable:hover {
+    opacity: 0.7;
+}
+
+.left {
+    left: 12px;
+}
+
+.right {
+    right: 12px;
+}
+
+.hasIconLeft {
+    padding-left: 36px;
+}
+
+.hasIconRight .input {
+    padding-right: 36px;
+}
+
+.error {
+    border: 1px solid var(--red);
+}
+
+.errorMessage {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 4px;
+}

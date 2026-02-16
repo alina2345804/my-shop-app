@@ -1,0 +1,11 @@
+.formInputControl {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--grey);
+}
+.formInputField {
+    flex: 1;
+    border: none;
+    outline: none;
+}

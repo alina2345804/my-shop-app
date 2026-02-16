@@ -1,5 +1,5 @@
 'use client';
-import { useFavorites } from '@/components/FavoriteContext/FavoriteContext';
+import { useFavorites } from '@/components/Features/FavoriteContext/FavoriteContext';
 import { Htag, ProductCard } from '@/components';
 import styles from './Favorite.module.css';
 

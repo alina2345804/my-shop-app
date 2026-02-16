@@ -1,9 +1,9 @@
 import './globals.css';
-import { Header } from '@/components/Header/Header';
+import { Header } from '@/components/Layout/Header/Header';
 import './globals.css';
 import { DM_Sans, Allerta_Stencil } from 'next/font/google';
-import { Footer } from '@/components/Footer/Footer';
-import { FavoriteProvider } from '@/components/FavoriteContext/FavoriteContext';
+import { Footer } from '@/components/Layout/Footer/Footer';
+import { FavoriteProvider } from '@/components/Features/FavoriteContext/FavoriteContext';
 
 //  DM Sans — основной шрифт для текста
 const dmSans = DM_Sans({

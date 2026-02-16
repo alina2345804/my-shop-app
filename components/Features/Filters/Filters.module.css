@@ -1,0 +1,73 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contentInput {
+    width: 261px;
+    height: 35px;
+}
+
+.categorySelect {
+    border: 1px solid var(--lite-white);
+    border-radius: 4px;
+    width: 100%;
+    height: 53px;
+    font-weight: 400;
+    padding: 16px 0 16px 12px;
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--black);
+}
+
+.discountFilter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Контейнер переключателя */
+.switch {
+    position: relative;
+    width: 46px;
+    height: 26px;
+    background: var(--dark-grey);
+    border-radius: 9999px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.switch.active {
+    background: var(--dark-grey);
+    outline: none;
+    box-shadow: none;
+}
+
+.contentInput {
+    border-bottom: 1px solid var(--lite-white);
+}
+
+.thumb {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.switch.active .thumb {
+    transform: translateX(20px);
+}
+
+.discountLabel {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 169%;
+    color: var(--black);
+    user-select: none;
+}
