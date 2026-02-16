@@ -1,0 +1,62 @@
+.notification {
+    position: absolute;
+    bottom: 20px;
+    width: 450px;
+    height: 61px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+    background: var(--lite-white);
+    color: var(--dark-grey);
+    padding: 17px 28px;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 200;
+}
+.notification.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+.checkNot {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.content {
+    text-align: center;
+    font-weight: 400;
+    line-height: 169%;
+}
+/* Адаптив */
+@media (max-width: 500px) {
+    .notification {
+        width: 90%;
+        height: auto;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .checkNot {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    .check {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        flex: 1;
+        line-height: 1.4;
+        text-align: left;
+        word-wrap: break-word;
+    }
+        }

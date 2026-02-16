@@ -1,5 +1,13 @@
-import { Product } from '../interfaces/product.interface';
+import { Product } from '@/interfaces/product.interface';
 import { ApiProduct } from '@/interfaces/api-product.interface';
+
+function generateSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
 
 export async function getProducts(): Promise<Product[]> {
   try {
@@ -8,7 +16,8 @@ export async function getProducts(): Promise<Product[]> {
     );
 
     if (!res.ok) {
-      throw new Error(`Ошибка при запросе: ${res.status}`);
+      console.log(`Ошибка при запросе: ${res.status}`);
+      return [];
     }
 
     const data = await res.json();
@@ -23,25 +32,30 @@ export async function getProducts(): Promise<Product[]> {
     // console.log('products');
     // console.log(products);
 
-    const normalized: Product[] = products.map((p) => {
-      const hasDiscount = typeof p.discount === 'number' && p.discount > 0;
+    return products.map((p, index) => {
+      const name = p.name ?? 'Без названия';
+      const price = Number(p.price) || 0;
+      const hasDiscount = (p.discount ?? 0) > 0;
       return {
-        name: p.name ?? 'Без названия',
-        price: Number(p.price) || 0,
-
+        uid: `product-${index}`,
+        sku: p.sku,
+        slug: generateSlug(name),
+        name,
+        price,
         oldPrice: hasDiscount
           ? Math.round(Number(p.price) * (1 + p.discount / 100))
           : undefined,
 
         discount: hasDiscount ? p.discount : undefined,
 
-        isSoldOut: false, // если нет в API — дефолт
+        isSoldOut: false,
 
         description: p.description ?? '',
         images: Array.isArray(p.images) ? p.images : [],
+        rating: p.rating ?? 0,
+        categoryId: Number(p.categoryId) || 0,
       };
     });
-    return normalized;
   } catch (error) {
     console.error('Ошибка при загрузке товаров:', error);
     return [];

@@ -1,4 +1,7 @@
 export interface Product {
+  uid: string;
+  sku: number;
+  slug: string;
   name: string;
   price: number;
   discount?: number;
@@ -6,4 +9,6 @@ export interface Product {
   images?: string[];
   isSoldOut?: boolean;
   oldPrice?: number;
+  rating: number;
+  categoryId: number;
 }

@@ -1,0 +1,27 @@
+.productActions {
+    display: flex;
+}
+
+.dividerInfo {
+    width: 1px;
+    height: 24px;
+    background-color: var(--grey);
+    margin: 0 60px
+}
+
+.socialsProductInformation {
+    display: flex;
+    gap: 16px;
+}
+
+.socialsProductInformation a svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--grey);
+    transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.socialsProductInformation a:hover svg {
+    transform: scale(1.1);
+    fill: var(--black);
+}

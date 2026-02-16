@@ -1,0 +1,47 @@
+.form {
+    max-width: 581px;
+    max-height: 604px;
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
+
+.titleForm {
+    padding-bottom: 11px;
+}
+
+.textareaReview {
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    outline: none;
+}
+
+.inputFormName {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--dark-grey);
+}
+
+.labelReview {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--dark-grey);
+}
+
+.buttonForm {
+    width: 156px;
+    height: 53px;
+    border-radius: 5px;
+}
+
+.ratingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}

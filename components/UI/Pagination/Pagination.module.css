@@ -1,0 +1,35 @@
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.pageButton {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pageButton.active {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.arrowButton {
+    fill: var(--black);
+}
+
+.pageButton:hover .arrowButton {
+    fill: var(--white);
+}
+
+.dots {
+    color: var(--dark-grey);
+    font-size: 16px;
+    user-select: none;
+}
