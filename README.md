@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Shop App
 
-## Getting Started
+Современное frontend-приложение интернет-магазина, реализованное на **Next.js 15 (App Router)** с использованием **React 19**, **TypeScript** и модульной архитектуры компонентов.
 
-First, run the development server:
+Проект демонстрирует:
+- работу с Server Components и API routes
+- продуманную UI-архитектуру
+- анимации, состояния и формы
+- подход к масштабируемому frontend-коду
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Демо-функциональность
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Главная страница
+- Каталог товаров
+- Карточка товара
+- Избранное
+- Страница «О нас»
+- Поиск
+- Оценка и рейтинг товаров
+- Анимации и модальные окна
+- Loading-состояния
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Технологический стек
 
-To learn more about Next.js, take a look at the following resources:
+### Core
+- **Next.js 15 (App Router)**
+- **React 19**
+- **TypeScript (strict mode)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### UI / UX
+- **CSS Modules**
+- **Framer Motion** — анимации и переходы
+- **Headless UI** — доступные UI-примитивы
+- **SVGR** — SVG как React-компоненты
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Forms & Logic
+- **react-hook-form**
+- Клиентская валидация
+- Server-side data fetching
 
-## Deploy on Vercel
+### Code Quality
+- ESLint
+- Prettier
+- Strict TypeScript config
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Архитектура проекта
+
+Проект построен по **component / domain oriented** подходу с чётким разделением ответственности.
+
+```text
+app/
+├── (site)/
+│   ├── about/
+│   ├── cart/
+│   ├── catalog/
+│   ├── favorite/
+│   └── product/
+│
+├── api/
+│   └── *.ts                # API routes
+│
+├── layout.tsx              # Root layout
+├── page.tsx                # Главная страница
+├── globals.css
+├── page.module.css
+│
+components/
+├── features/
+│   ├── FavoriteContext
+│   ├── Filters
+│   └── ReviewForm
+│
+├── Layout/
+│   ├── Header
+│   ├── Footer
+│   ├── Menu
+│   └── SectionNav
+│
+├── Product/
+│   ├── ProductCard
+│   ├── ProductGallery
+│   ├── ProductInfo
+│   ├── ProductPrice
+│   ├── ProductTags
+│   ├── ProductActions
+│   └── RelatedProducts
+│
+├── Sections/
+│   ├── HeroSlider
+│   ├── TopCatalog
+│   ├── AboutUs
+│   └── SectionAbout
+│
+├── UI/
+│   ├── Button
+│   ├── Input
+│   ├── Checkbox
+│   ├── Rating
+│   ├── Pagination
+│   ├── QuantitySelector
+│   ├── SearchInput
+│   └── Notification
+│
+└── index.ts                # Public exports
